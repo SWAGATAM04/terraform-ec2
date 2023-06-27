@@ -77,7 +77,10 @@ jobs:
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
-      run: terraform init
+      run: |
+        aws configure set aws_access_key_id ${{ secrets.ACCESS_KEY_ID_AWS }} --profile default
+        aws configure set aws_secret_access_key ${{ secrets.SECRET_ACCESS_KEY_AWS }} --profile default
+        terraform init
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
