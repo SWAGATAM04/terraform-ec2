@@ -1,1 +1,13 @@
 # terraform-ec2
+
+
+1. Provison 1 EC2 instance manually from aws .
+2. create a github-runner user 
+
+3. register the box as runner within github
+4. install dependencies for running runner as libcu etc
+
+5. copy the server login .pem file under /home/github-runner/.ssh/key.pem
+6. chmod 400 /home/github-runner/.ssh/key.pem
+7. /etc/sudoers github-runner 
+8. yum install git -yum
