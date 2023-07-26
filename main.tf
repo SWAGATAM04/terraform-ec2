@@ -20,12 +20,12 @@ resource "aws_instance" "web" {
     destination = "/tmp/software.sh"
   }
 
- #provisioner "remote-exec" {
-  #  inline = [
-   #   "sudo chmod +x /tmp/software.sh",
-    #  "/bin/bash /tmp/software.sh"
-    #]
-  #}
+ provisioner "remote-exec" {
+    inline = [
+      "sudo chmod +x /tmp/software.sh",
+      "/bin/bash /tmp/software.sh"
+    ]
+  }
 
 
   tags = {
