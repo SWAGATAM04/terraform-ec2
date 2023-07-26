@@ -1,0 +1,19 @@
+#!/bin/bash
+"sudo useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/bash"
+"sudo curl -fL https://install-cli.jfrog.io | sh"
+"sudo mkdir -p /home/gitlab-runner/actions-runner"
+"sudo curl -o /home/gitlab-runner/actions-runner-linux-x64-2.305.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.305.0/actions-runner-linux-x64-2.305.0.tar.gz"
+"sudo echo 'gitlab-runner   ALL=(ALL)       NOPASSWD: ALL' >> /etc/sudoers"
+"sudo yum install -y wget unzip"
+#"sudo curl -o /tmp/terraform_1.5.3_linux_amd64.zip -L https://releases.hashicorp.com/terraform/1.5.3/terraform_1.5.3_linux_amd64.zip"
+#"sudo unzip /tmp/terraform_1.5.3_linux_amd64.zip -d /usr/local/bin/"
+"sudo curl -o /tmp/openlogic-openjdk-11.0.18+10-linux-x64-el.rpm -L https://builds.openlogic.com/downloadJDK/openlogic-openjdk/11.0.18+10/openlogic-openjdk-11.0.18+10-linux-x64-el.rpm"
+"sudo rpm -ivh /tmp/openlogic-openjdk-11.0.18+10-linux-x64-el.rpm"
+"sudo curl -o /tmp/apache-maven-3.8.2-bin.tar.gz -L https://archive.apache.org/dist/maven/maven-3/3.8.2/binaries/apache-maven-3.8.2-bin.tar.gz"
+"sudo tar -vxzf /tmp/apache-maven-3.8.2-bin.tar.gz -C /opt/"
+"sudo cat >> .bashrc  <<EOF
+export MAVEN_HOME=/opt/apache-maven-3.8.2
+PATH=$PATH:$MAVEN_HOME/bin
+export JAVA_HOME=/usr/lib/jvm/openlogic-openjdk-11-hotspot
+export PATH=$JAVA_HOME/bin:$PATH
+EOF"
