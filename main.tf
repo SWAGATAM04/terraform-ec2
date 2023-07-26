@@ -41,10 +41,10 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket         = "st-r22eksvv-bucket1"  #ACCOUNT_ID should be set manually for Workstation Deployment. Example: "terraform-state-bucket-514816568735"
-    dynamodb_table = "st-r22eksvv-bucket1" #ACCOUNT_ID should be set manually for Workstation Deployment. Example: "terraform-lock-dynamodb-514816568735"
+    bucket         = "st-r22eksvv-bucket2"  #ACCOUNT_ID should be set manually for Workstation Deployment. Example: "terraform-state-bucket-514816568735"
+    dynamodb_table = "st-r22eksvv-bucket2" #ACCOUNT_ID should be set manually for Workstation Deployment. Example: "terraform-lock-dynamodb-514816568735"
     key            = "st-ec2.tfstate"
     encrypt        = true
-    region         = "us-east-1"
+    region         = "us-east-2"
   }
 }
