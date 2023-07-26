@@ -9,5 +9,5 @@
 
 5. copy the server login .pem file under /home/github-runner/.ssh/key.pem
 6. chmod 400 /home/github-runner/.ssh/key.pem
-7. /etc/sudoers github-runner 
+7. /etc/sudoers github-runner [gitlab-runner   ALL=(ALL)       NOPASSWD: ALL]
 8. yum install git  libicu -y
