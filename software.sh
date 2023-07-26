@@ -25,3 +25,4 @@ sudo systemctl start docker.service
 sudo chmod 777 /var/run/docker.sock
 sudo usermod -aG docker gitlab-runner
 
+
