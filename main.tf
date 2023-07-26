@@ -14,7 +14,8 @@ resource "aws_instance" "web" {
     host        = self.public_ip
   }
 
- 
+
+
   provisioner "file" {
     source      = "software.sh"
     destination = "/tmp/software.sh"
