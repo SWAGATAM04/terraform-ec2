@@ -11,7 +11,7 @@ variable "cluster_name" {
 
 variable "instance_count" {
    description = "Number of instances to launch"
-   default = 2
+   default = 1
    type   = number
 }
 
