@@ -7,6 +7,26 @@ resource "aws_instance" "web" {
   vpc_security_group_ids = flatten([var.security_group])
   subnet_id              = var.subnet_id
 
+  connection {
+    type        = "ssh"
+    user        = "ec2-user"
+    private_key = file("~/.ssh/key.pem")
+    host        = self.public_ip
+  }
+ 
+  provisioner "file" {
+    source      = "software.sh"
+    destination = "/tmp/software.sh"
+  }
+
+ provisioner "remote-exec" {
+    inline = [
+      "sudo chmod +x /tmp/software.sh",
+      "/bin/bash /tmp/software.sh"
+    ]
+  }
+
+
   tags = {
     Terraform   = "true"
     Environment = "dev"
