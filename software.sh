@@ -19,3 +19,9 @@ sudo cp .bashrc /home/gitlab-runner/.bashrc
 sudo curl -o /home/gitlab-runner/jboss-eap-7.4.0.zip -L  https://kubesphere-ohio-eks.s3.us-east-2.amazonaws.com/jboss-eap-7.4.0.zip
 sudo unzip /home/gitlab-runner/jboss-eap-7.4.0.zip -d /home/gitlab-runner/
 sudo chown -R gitlab-runner:gitlab-runner /home/gitlab-runner/
+sudo yum install docker -y
+sudo systemctl enable docker.service
+sudo systemctl start docker.service
+sudo chmod 777 /var/run/docker.sock
+sudo usermod -aG docker gitlab-runner
+
