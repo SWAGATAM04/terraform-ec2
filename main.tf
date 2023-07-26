@@ -13,6 +13,7 @@ resource "aws_instance" "web" {
     private_key = file("~/.ssh/key.pem")
     host        = self.public_ip
   }
+
  
   #provisioner "file" {
   #  source      = "software.sh"
