@@ -19,4 +19,3 @@ sudo cp .bashrc /home/gitlab-runner/.bashrc
 sudo curl -o /home/gitlab-runner/jboss-eap-7.4.0.zip -L  https://kubesphere-ohio-eks.s3.us-east-2.amazonaws.com/jboss-eap-7.4.0.zip
 sudo unzip /home/gitlab-runner/jboss-eap-7.4.0.zip -d /home/gitlab-runner/
 sudo chown -R gitlab-runner:gitlab-runner /home/gitlab-runner/
-sudo su - gitlab-runner -c "bash /home/gitlab-runner/jboss-eap-7.4/bin/standalone.sh &"
