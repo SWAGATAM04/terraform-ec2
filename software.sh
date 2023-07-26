@@ -19,5 +19,4 @@ sudo cp .bashrc /home/gitlab-runner/.bashrc
 sudo curl -o /home/gitlab-runner/jboss-eap-7.4.0.zip -L  https://kubesphere-ohio-eks.s3.us-east-2.amazonaws.com/jboss-eap-7.4.0.zip
 sudo unzip /home/gitlab-runner/jboss-eap-7.4.0.zip -d /home/gitlab-runner/
 sudo chown -R gitlab-runner:gitlab-runner /home/gitlab-runner/
-sudo ipv4=$(/sbin/ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)
-sudo su - gitlab-runner -c "bash /home/gitlab-runner/jboss-eap-7.4/bin/standalone.sh -Djboss.bind.address=$ipv4 &"
+sudo su - gitlab-runner -c "bash /home/gitlab-runner/jboss-eap-7.4/bin/standalone.sh &"
