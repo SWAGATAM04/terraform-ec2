@@ -15,10 +15,10 @@ resource "aws_instance" "web" {
   }
 
  
-  #provisioner "file" {
-  #  source      = "software.sh"
-  #  destination = "/tmp/software.sh"
-  #}
+  provisioner "file" {
+    source      = "software.sh"
+    destination = "/tmp/software.sh"
+  }
 
  #provisioner "remote-exec" {
   #  inline = [
